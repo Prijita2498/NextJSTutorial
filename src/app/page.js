@@ -1,95 +1,45 @@
-import Image from 'next/image'
+'use client'
+
 import styles from './page.module.css'
+import UserProps from './UserProps'
+import EventFunctionState from './EventFunctionState'
+import Link from 'next/link'
+import {useRouter} from 'next/navigation'
+import custom from './custom.module.css'
 
 export default function Home() {
+  const router = useRouter();
+
+  const navigate = (name) =>{
+    router.push(name)
+  }
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div className={styles.main}>
+      {/* Props */}
+      <UserProps name="Prijitha Ezhava" />
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      {/* Event, Function and State */}
+      <EventFunctionState />
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      {/* Link */}
+      <Link href="/login">Go To Login Page</Link><br /><br />
+      <Link href="/about">Go To About Page</Link><br /><br />
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+      {/* Navigation */}
+      <button onClick={()=>navigate("/login")}>Go To Login Page</button><br/><br/>
+      <button onClick={()=>navigate("/study")}>Go To Study Page</button><br/><br/>
+      <button onClick={()=>navigate("/clientproductlist")}>Go To Client Product List Page</button><br/><br/>
+      <button onClick={()=>navigate("/serverproductlist")}>Go To Server Product List Page</button><br/><br/>
+      <button onClick={()=>navigate("/stylecss")}>Go To Style Page</button><br/><br/>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
+      {/* Module.css */}
+      <button onClick={()=>navigate("/custommodule")}>Go To Custom Module CSS Page</button><br/><br/>
+      <h2 className={custom.main}>Custom Module CSS in Next JS</h2><br/>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      {/* Condition style */}
+      <button onClick={()=>navigate("/conditionstyle")}>Go To Custom Module CSS Page</button><br/><br/>
+
+    </div>
   )
 }
+
