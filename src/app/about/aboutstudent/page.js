@@ -7,3 +7,9 @@ const AboutStudent = () =>{
 }
 
 export default AboutStudent
+
+export function generateMetadeta({params}){
+    return{
+        title:"About Page Title"
+    }
+}
