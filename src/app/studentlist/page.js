@@ -8,8 +8,8 @@ export default function StudentList(){
             <h1>Student List</h1>
             <ul>
                 {
-                    students.map((student)=>(
-                        <li>
+                    students.map((student,index)=>(
+                        <li key={index}>
                             <Link href="/studentlist/[name]" as={`/studentlist/${student}`}>{student}</Link>
                         </li>
                     ))

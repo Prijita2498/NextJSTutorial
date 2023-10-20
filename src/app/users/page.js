@@ -37,7 +37,7 @@ export default async function Page() {
             </table> */}
             {
                 users.map((user, index) => (
-                    <div><h2>User Name : {user.firstName}</h2></div>
+                    <div key={index}><h2>User Name : {user.firstName}</h2></div>
                 ))}
 
         </div>
