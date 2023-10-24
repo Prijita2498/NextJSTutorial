@@ -54,6 +54,9 @@ export default function Home() {
       <h1>Font Optimization in Next JS</h1>
       {/* <h1 style={{fontFamily:"Roboto",fontWeight:100}}>Font with Link Tag</h1> */}
       <h1 className={roboto.className}>Font with Next JS font feature</h1>
+
+      {/* Environment Variable */}
+      <button onClick={() => navigate("/envvariable")}>Environment Variable</button>
     </div>
   )
 }
